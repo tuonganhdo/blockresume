@@ -40,7 +40,7 @@ export async function updateSession(request: NextRequest) {
 
     // define route groups
     const isAuthPage = path === '/login' || path === '/signup'
-    const isProtectedPage = path === '/dashboard' || path.startsWith('/editor')
+    const isProtectedPage = path === '/account' || path === '/dashboard' || path.startsWith('/editor')
     const isHomePage = path === '/'
 
     // if authenticated user tries to access homepage or auth page --> redirect to dashboard
