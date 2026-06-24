@@ -88,25 +88,25 @@ export default function AccountPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-height-80vh text-sm font-medium">
+      <div className="flex items-center justify-center min-h-[80vh] text-sm font-medium opacity-50">
         Loading profile...
       </div>
     )
   }
 
   return (
-    <div className="account-container">
-      <h2>Account</h2>
+    <div className="max-w-2xl mx-auto">
+      <h2 className="text-2xl font-bold tracking-tight mb-6">Account</h2>
       
-      <form onSubmit={handleUpdateProfile}>
+      <form onSubmit={handleUpdateProfile} className="flex flex-col gap-4">
         <div>
-          <label>Email address</label>
-          <input type="text" value={email} disabled />
+          <label className="form-label">Email address</label>
+          <input type="text" value={email} disabled className="opacity-60 cursor-not-allowed" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label>Location</label>
+            <label className="form-label">Location</label>
             <input 
               type="text" 
               value={location} 
@@ -115,7 +115,7 @@ export default function AccountPage() {
             />
           </div>
           <div>
-            <label>Phone number</label>
+            <label className="form-label">Phone number</label>
             <input 
               type="text" 
               value={phoneNumber} 
@@ -125,10 +125,10 @@ export default function AccountPage() {
           </div>
         </div>
 
-        <h3>Social links</h3>
+        <h3 className="section-divider">Social links</h3>
         
         <div>
-          <label>Website/portfolio</label>
+          <label className="form-label">Website/portfolio</label>
           <input 
             type="text" 
             value={websiteUrl} 
@@ -138,7 +138,7 @@ export default function AccountPage() {
         </div>
 
         <div>
-          <label>GitHub</label>
+          <label className="form-label">GitHub</label>
           <input 
             type="text" 
             value={githubUrl} 
@@ -148,7 +148,7 @@ export default function AccountPage() {
         </div>
 
         <div>
-          <label>LinkedIn</label>
+          <label className="form-label">LinkedIn</label>
           <input 
             type="text" 
             value={linkedinUrl} 
@@ -158,7 +158,7 @@ export default function AccountPage() {
         </div>
 
         <div>
-          <label>Twitter/X</label>
+          <label className="form-label">Twitter/X</label>
           <input 
             type="text" 
             value={twitterUrl} 
@@ -166,26 +166,28 @@ export default function AccountPage() {
             placeholder="https://x.com/username" 
           />
         </div>
-
-        <button 
-          type="submit" 
-          disabled={isSaving}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors inline-flex items-center justify-center disabled:opacity-50"
-        >
-          {isSaving ? 'Saving changes...' : 'Save'}
-        </button>
+        
+        <div className="mt-2">
+          <button 
+            type="submit" 
+            disabled={isSaving}
+            className="btn-primary"
+          >
+            {isSaving ? 'Saving changes...' : 'Save'}
+          </button>
+        </div>
       </form>
 
       {/* notification block */}
       {message && (
-        <div className={`mt-4 text-sm font-medium p-3 rounded-md text-center ${
-          message.type === 'success' ? 'bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-200' : 'error'
-        }`}>
+        <div className={message.type === 'success' ? 'banner-success' : 'banner-error'}>
           {message.text}
         </div>
       )}
 
-      <LogoutButton/>
+      <div className="mt-8 border-t border-app pt-6">
+        <LogoutButton/>
+      </div>
     </div>
   );
 }
