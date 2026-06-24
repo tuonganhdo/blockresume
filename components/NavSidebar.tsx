@@ -1,4 +1,5 @@
 import LogoutButton from "./LogoutButton"
+import ThemeToggle from "./ThemeToggle"
 
 interface NavSidebarProps {
   activeTab: 'resumes' | 'blocks' | 'account'
@@ -35,7 +36,11 @@ export default function NavSidebar({ activeTab, setActiveTab }: NavSidebarProps)
         </nav>
       </div>
 
-      <LogoutButton/>
+      {/* button group for toggling theme + logout */}
+      <div className="flex flex-col gap-3 w-full">
+        <ThemeToggle/>
+        <LogoutButton/>
+      </div>
     </aside>
   )
 }

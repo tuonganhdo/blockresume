@@ -17,7 +17,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #0b0f19;
     --foreground: #f9fafb;
     --card-bg: #161e2e;
@@ -27,6 +27,17 @@
     --error-bg: #1f1315;
     --error-text: #f87171;
   }
+}
+
+:root.dark {
+  --background: #0b0f19;
+  --foreground: #f9fafb;
+  --card-bg: #161e2e;
+  --border: #243049;
+  --primary: #3b82f6;
+  --input-bg: #111827;
+  --error-bg: #1f1315;
+  --error-text: #f87171;
 }
 
 body {
