@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
 import LogoutButton from "@/components/LogoutButton";
 
-export default function AccountPage() {
+export default function AccountView() {
   const supabase = createClient()
   const [loading, setLoading] = useState(true)
   const [isSaving, setIsSaving] = useState(false)
@@ -184,10 +184,6 @@ export default function AccountPage() {
           {message.text}
         </div>
       )}
-
-      <div className="mt-8 border-t border-app pt-6">
-        <LogoutButton/>
-      </div>
     </div>
   );
 }

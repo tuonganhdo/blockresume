@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import AccountPage from '@/app/account/page'
+import AccountView from '@/components/AccountView'
 import ResumeGrid from '@/components/ResumeGrid'
 import NavSidebar from '@/components/NavSidebar'
 import { useResumes } from '@/hooks/useResumes'
@@ -43,7 +43,7 @@ export default function DashboardPage() {
         )}
 
         {/* account tab */}
-        {activeTab === 'account' && <AccountPage />}
+        {activeTab === 'account' && <AccountView />}
       </main>
     </div>
   )
