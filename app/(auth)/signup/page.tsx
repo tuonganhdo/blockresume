@@ -37,10 +37,12 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="auth-container">
-        <h2>Sign up</h2>
-        <form onSubmit={handleSignup}>
+    <div className="layout-shell min-h-screen flex items-center justify-center p-4">
+      <div className="card-surface w-full max-w-md p-8 rounded-xl shadow-sm flex flex-col gap-6">
+        <h2 className="text-2xl font-bold tracking-tight">Sign up</h2>
+        <form onSubmit={handleSignup} className="flex flex-col gap-4">
           {/* email input */}
+          <label className="form-label">Email address</label>
           <input
             type="email"
             value={email}
@@ -50,6 +52,7 @@ export default function SignupPage() {
           />
 
           {/* password input */}
+          <label className="form-label">Password</label>
           <input
             type="password"
             value={password}
@@ -59,13 +62,16 @@ export default function SignupPage() {
           />
 
           {/* submit button */}
-          <button type="submit">Sign up</button>
+          <button type="submit" className="btn-primary w-full mt-2">Sign up</button>
         </form>
 
-        <p>Returning user? <Link href="/login">Log in</Link></p>
+        <p className="text-sm opacity-60 text-center mt-2">
+          Returning user? <Link href="/login" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">Log in</Link>
+        </p>
 
         {/* render error message if exists */}
-        { error && <p className="error">{error}</p>}
+        { error && <p className="banner-error">{error}</p>}
+      </div>
     </div>
   );
 }

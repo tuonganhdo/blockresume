@@ -35,10 +35,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="auth-container">
-        <h2>Log in</h2>
-        <form onSubmit={handleLogin}>
+    <div className="layout-shell min-h-screen flex items-center justify-center p-4">
+      <div className="card-surface w-full max-w-md p-8 rounded-xl shadow-sm flex flex-col gap-6">
+        <h2 className="text-2xl font-bold tracking-tight">Log in</h2>
+        <form onSubmit={handleLogin} className="flex flex-col gap-4">
           {/* email input */}
+          <label className="form-label">Email address</label>
           <input
             type="email"
             value={email}
@@ -48,6 +50,7 @@ export default function LoginPage() {
           />
 
           {/* password input */}
+          <label className="form-label">Password</label>
           <input
             type="password"
             value={password}
@@ -57,13 +60,16 @@ export default function LoginPage() {
           />
 
           {/* submit button */}
-          <button type="submit">Log in</button>
+          <button type="submit" className="btn-primary w-full mt-2">Log in</button>
         </form>
 
-        <p>New here? <Link href="/signup">Sign up</Link></p>
+        <p className="text-sm opacity-60 text-center mt-2">
+          New here? <Link href="/signup" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">Sign up</Link>
+        </p>
 
         {/* render error message if exists */}
-        { error && <p className="error">{error}</p>}
+        { error && <p className="banner-error">{error}</p>}
+      </div>
     </div>
   );
 }
