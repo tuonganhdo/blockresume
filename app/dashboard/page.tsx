@@ -37,7 +37,7 @@ export default function DashboardPage() {
         {activeTab === 'blocks' && (
           <div>
             <h2 className="text-2xl font-bold tracking-tight mb-2">Block library</h2>
-            <div className="card-surface p-8 rounded-lg text-sm opacity-60">
+            <div className="card-surface p-8 rounded-lg text-sm">
               <BlockLibrary/>
             </div>
           </div>
