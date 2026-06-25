@@ -5,6 +5,7 @@ import AccountView from '@/components/AccountView'
 import ResumeGrid from '@/components/ResumeGrid'
 import NavSidebar from '@/components/NavSidebar'
 import { useResumes } from '@/hooks/useResumes'
+import BlockLibrary from '@/components/BlockLibrary'
 
 type Tab = 'resumes' | 'blocks' | 'account'
 
@@ -37,7 +38,7 @@ export default function DashboardPage() {
           <div>
             <h2 className="text-2xl font-bold tracking-tight mb-2">Block library</h2>
             <div className="card-surface p-8 rounded-lg text-sm opacity-60">
-              TODO: block library
+              <BlockLibrary/>
             </div>
           </div>
         )}

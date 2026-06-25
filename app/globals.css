@@ -220,3 +220,38 @@ input[type="text"]:focus {
 }
 @media (min-width: 768px) { .content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .content-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* ------------------- RESUME BLOCKS ------------------- */
+
+.block-preview-base {
+  cursor: grab;
+  user-select: none;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.block-preview-base:hover {
+  border-color: var(--primary);
+}
+
+.block-preview-base:active {
+  cursor: grabbing;
+}
+
+/* ------------------- RESUME RENDERING ------------------- */
+
+.resume-heading-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.resume-text-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.resume-text-serif-italic {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+}

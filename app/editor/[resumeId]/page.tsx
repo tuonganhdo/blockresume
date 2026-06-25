@@ -1,8 +1,5 @@
-export default function EditorPage({ params } : { params : { resumeId : string }}) {
-    const resumeId = params.resumeId;
-    return (
-    <div>
-      <p>TODO: EDITOR</p>
-    </div>
+export default function EditorPage() {
+  return (
+    <p>TODO: EDITOR PAGE</p>
   );
 }
