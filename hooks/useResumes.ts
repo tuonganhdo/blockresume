@@ -11,7 +11,6 @@ export interface Resume {
   show_linkedin: boolean
   show_twitter: boolean
   show_website: boolean
-  blocks: any[] // map JSONB col to standard array
   updated_at: string
 }
 
@@ -33,8 +32,7 @@ export function useResumes(activeTab: string) {
           .select(`
             id, user_id, title, 
             show_location, show_phone_number, show_github, 
-            show_linkedin, show_twitter, show_website, 
-            blocks, updated_at
+            show_linkedin, show_twitter, show_website, updated_at
           `)
           .order('updated_at', { ascending: false })
 
@@ -67,7 +65,6 @@ export function useResumes(activeTab: string) {
         .insert([{ 
           user_id: user.id, 
           title: 'Untitled Resume', 
-          blocks: []
         }])
         .select()
         .single()
